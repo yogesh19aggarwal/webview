@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Webview</title>
+  </head>
+
+  <body>
+    <button onclick="sendSuccess()">Send Success</button>
+    <button onclick="sendFailure()">Send Failure</button>
+
+    <script>
+      function sendSuccess() {
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({ success: true })
+        );
+      }
+
+      function sendFailure() {
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({ success: false })
+        );
+      }
+    </script>
+  </body>
+</html>
