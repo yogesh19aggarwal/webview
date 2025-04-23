@@ -12,15 +12,11 @@
 
     <script>
       function sendSuccess() {
-        window.ReactNativeWebView.postMessage(
-          JSON.stringify({ success: true })
-        );
+        window.location.href = "abg://account/guestprefferedaccount/true";
       }
 
       function sendFailure() {
-        window.ReactNativeWebView.postMessage(
-          JSON.stringify({ success: false })
-        );
+        window.location.href = "abg://account/guestprefferedaccount/false";
       }
     </script>
   </body>
