@@ -9,10 +9,25 @@
   <body>
     <h1>WebView Sample Page</h1>
 
+    <p><strong>First Name:</strong> <span id="fName"></span></p>
+    <p><strong>Last Name:</strong> <span id="lName"></span></p>
+
     <button onclick="sendSuccess()">Send Success</button>
     <button onclick="sendFailure()">Send Failure</button>
 
     <script>
+      const params = new URLSearchParams(window.location.search);
+      const fName = params.get("fName");
+      const lName = params.get("lName");
+
+      // Show values in console (optional)
+      console.log("Param1:", fName);
+      console.log("Param2:", lName);
+
+      // Display in UI
+      document.getElementById("fName").textContent = fName || "N/A";
+      document.getElementById("lName").textContent = lName || "N/A";
+
       function sendSuccess() {
         window.ReactNativeWebView.postMessage(
           JSON.stringify({ success: true })
